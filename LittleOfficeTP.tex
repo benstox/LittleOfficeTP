@@ -1,0 +1,152 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+% usual packages loading:
+\usepackage{forloop}
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\usepackage[allowdeprecated=false]{gregoriotex} % for gregorio score inclusion
+\usepackage{fullpage} % to reduce the margins
+\usepackage{titlesec}
+%\usepackage{bold-extra}
+\usepackage[oldstyle]{libertine}
+\usepackage{lettrine}
+\setlength{\parindent}{-0.25in}
+\usepackage[normalem]{ulem}
+\setlength{\ULdepth}{2pt}
+\usepackage{tipa}
+
+\definecolor{benred8}{HTML}{E82C00}
+\definecolor{benblue1}{HTML}{2B22C7}
+\definecolor{benyellow1}{HTML}{FFD435}
+\definecolor{benyellow2}{HTML}{7C6F3B}
+
+
+% DEFINE THE FORMATTING OF
+% PSALM TEXT
+\newenvironment{psalmtext}{\leftskip 0.25in}{\vspace{2 mm}}
+\newenvironment{rubric}{\color{benred8} \itshape \leftskip 0in \setlength{\parindent}{0.25in}}{\vspace{2 mm}}
+\newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
+
+% REDUCES SUBSECTION SPACE
+\def\subspace{\vspace{-13 mm}}
+
+% MAKES Flexa : TEXT
+\def\flex{\textit{\textcolor{benred8}{Flexa :}}}
+
+% MAKES Cantor : TEXT
+\def\cantor{\textit{\textcolor{benred8}{Cantor :}}}
+
+% MAKES vel : TEXT
+\def\vel{\textit{\textcolor{benred8}{vel :}}}
+
+% MAKES deinde : TEXT
+\def\deinde{\textit{\textcolor{benred8}{deinde :}}}
+
+% MAKES Repetitur : TEXT
+\def\repetitur{\textit{\textcolor{benred8}{Repetitur :}}}
+
+% MAKES secreto usque ad TEXT
+\def\secreto{\textit{\textcolor{benred8}{secreto usque ad}}}
+
+% MAKES T.P. TEXT
+\def\TemporePaschale{\textit{\textcolor{benred8}{T. P.}}}
+
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
+
+% MAKES ALL \GreDaggers RED
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
+
+% MAKES ALL \Vbars RED
+\let\oldVbar\Vbar
+\def\VVbar{\textcolor{benred8}{\oldVbar\oldVbar .}}
+\renewcommand{\Vbar}{\textcolor{benred8}{\oldVbar .}}
+
+% MAKES ALL \Rbars RED
+\let\oldRbar\Rbar
+\renewcommand{\Rbar}{\textcolor{benred8}{\oldRbar .}}
+
+% MAKES ALL \Abars RED
+\let\oldAbar\Abar
+\renewcommand{\Abar}{\textcolor{benred8}{\oldAbar .}}
+
+% MAKES ALL \grealtcrosses RED
+\let\oldgrealtcross\grealtcross
+\renewcommand{\grealtcross}{\textcolor{benred8}{\oldgrealtcross}}
+
+% ANOTHER CROSS GLYPH USED FOR THE SIGN OF THE CROSS WITH THUMB ON CHEST
+\newcommand{\grebencross}{\fontspec{gresym3.ttf}\textcolor{benred8}{T}}
+
+% SPACE BETWEEN Capitulum AND BIBLE VERSE
+\def\capitulumSpace{\hspace{20 mm}}
+
+% MAKES RED PIPE FOR ENGLISH CADENCES
+\def\pipe{\textcolor{benred8}{\textdoublepipe}}
+
+% ANNOTATION STYLE
+\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
+\grechangedim{annotationraise}{-3 mm}{scalable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HERE BEGINS THE DOCUMENT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+{\centering
+Hail Mary.
+
+}
+
+\gregorioscore[a]{english/DeusInAdjutorium.gtex}
+
+\vspace{2mm}
+
+\greannotation{1 {\upshape\Abar} VIII G}
+\gregorioscore[a]{english/Ant1-01-dum_esset_rex.gtex}
+
+{\centering
+\textcolor{benred8}{Psalm 109.}
+
+}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{english/FL1.gtex}
+
+}
+
+\begin{psalmtext}
+Until I make thy \pipe\ e\uline{nemies} \GreStar\ \pipe\ \textbf{thy} footstool.
+
+The Lord will send forth the sceptre of thy power out of \pipe\ Sion: \GreStar\ rule thou in the midst \pipe\ of thy e\uline{nemies}.
+
+With thee is the principality in the day of thy strength: in the brightness \pipe\ of \uline{the saints}: \GreStar\ from the womb before the day star \pipe\ I begot thee.
+
+The Lord hath sworn, and he will not \pipe\ repent: \GreStar\ Thou art a priest for ever according to the order \pipe\ of Melchi\uline{sedech}.
+
+The Lord at thy \pipe\ right hand \GreStar\ hath broken kings in the day \pipe\ of his \textbf{wrath}.
+
+He shall judge among nations, he shall fill \pipe\ ruins: \GreStar\ he shall crush the heads in the \pipe\ land of many.
+
+He shall drink of the torrent in \pipe\ the way: \GreStar\ therefore shall he lift \pipe\ up the \textbf{head}.
+
+Glory be to the Father, and to \pipe\ the Son, \GreStar\ and to the \pipe\ Holy Spirit.
+
+As it was in the beginning, is now, and ever \pipe\ shall be, \GreStar\ world without \pipe\ end. A\textbf{men}.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{english/Ant1-02-dum_esset_rex.gtex}
+
+}
+
+\end{document}
