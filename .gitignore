@@ -1,5 +1,8 @@
 syntax: glob
 
+.DS_Store
 *.log
+*.gaux
 *.aux
 *.gtex
+*.glog
