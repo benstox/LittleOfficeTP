@@ -19,8 +19,9 @@
 \setlength{\parindent}{-0.25in}
 \usepackage[normalem]{ulem}
 \setlength{\ULdepth}{2pt}
-% for some reason I need this next line on my Linux machine and have to comment it out on the Mac:
-%\usepackage{tipa}
+% for some reason I need this next line on my Linux machine and have to comment it out on the Mac
+% (it provides the \textdoublepipe character but apparently not needed for some setups):
+\usepackage{tipa}
 
 \definecolor{benred8}{HTML}{E82C00}
 \definecolor{benblue1}{HTML}{2B22C7}
@@ -165,6 +166,29 @@ As it was in the beginning, is now, and ever \pipe\ shall be, \GreStar\ world wi
 
 %}
 
+\begin{psalmtext}
+Praise the \textbf{Lord}, ye \textbf{child}ren: \gresixstar\ praise ye the \textbf{name} of \textbf{the} Lord.
+
+\textcolor{benred8}{\emph{A sign of reverence is made:}} Blessed be the \pipe\ \textbf{name} \uline{of the} Lord, \gresixstar\ from henceforth \pipe\ now \uline{and for} ever.
+
+From the rising of the sun unto the going \pipe\ \textbf{down} \uline{of the} same, \gresixstar\ the name of the Lord is \pipe\ \textbf{worth}\uline{y of} praise.
+
+The Lord is high a- \pipe\ bove all nations; \gresixstar\ and his glory a- \pipe\ bove the heavens.
+
+Who is as the Lord our God, who \pipe\ \textbf{dwel}\uline{leth on} high: \gresixstar\ and looketh down on the low things in \pipe\ heaven \uline{and in} earth?
+
+Raising up the \pipe\ needy \uline{from the} earth, \gresixstar\ and lifting up the poor \pipe\ out \uline{of the} dunghill:
+
+That he may \pipe\ place \uline{him with} princes, \gresixstar\ with the princes \pipe\ of his people.
+
+Who maketh a barren woman to \pipe\ \textbf{dwell} \uline{in a} house, \gresixstar\ the joyful \pipe\ mo\uline{ther of} children.
+
+Glory be to the \pipe\ Fa\uline{ther, and}\hspace{2mm}\uline{to the} Son, \gresixstar\ and to the \pipe\ Holy Spirit.
+
+As it was in the beginning, is now, and \pipe\ ever shall be, \gresixstar\ world without \pipe\ \textbf{end}. Amen.
+
+\end{psalmtext}
+
 {\gresetinitiallines{0}
 \gregorioscore[a]{english/Ant2-02-laeva_ejus.gtex}
 
@@ -236,5 +260,14 @@ As it was in the beginning, is now, and ever \pipe\ shall be, \GreStar\ world wi
 }
 
 \gregorioscore[a]{english/CapitulumAbInitio.gtex}
+
+\gregorioscore[a]{latin/hy--ave_maris_stella--solesmes.gtex}
+
+\gregorioscore[a]{latin/MagAnt-01.gtex}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{latin/MagAnt-02.gtex}
+
+}
 
 \end{document}
