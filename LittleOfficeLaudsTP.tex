@@ -1,0 +1,554 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+% usual packages loading:
+\usepackage{forloop}
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\usepackage[allowdeprecated=false]{gregoriotex} % for gregorio score inclusion
+\usepackage{fullpage} % to reduce the margins
+\usepackage{titlesec}
+%\usepackage{bold-extra}
+\usepackage[oldstyle]{libertine}
+\usepackage{lettrine}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{\color{benred8}\textsc{Eastertide Lauds of the B.V.M.}}
+\rhead{}
+\lfoot{}
+\cfoot{\textcolor{benblue1}{\thepage}}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headsep}{25pt}
+%redefine 'plain' page style to have blue page numbers too
+\fancypagestyle{plain}{
+    \chead{}
+    \cfoot{\textcolor{benblue1}{\thepage}}
+
+}
+
+\setlength{\parindent}{-0.25in}
+\usepackage[normalem]{ulem}
+\setlength{\ULdepth}{2pt}
+% for some reason I need this next line on my Linux machine and have to comment it out on the Mac
+% (it provides the \textdoublepipe character but apparently not needed for some setups):
+\usepackage{tipa}
+
+\definecolor{benred8}{HTML}{E82C00}
+\definecolor{benblue1}{HTML}{2B22C7}
+\definecolor{benyellow1}{HTML}{FFD435}
+\definecolor{benyellow2}{HTML}{7C6F3B}
+
+
+% DEFINE THE FORMATTING OF
+% PSALM TEXT, OTHER ENVIRONMENTS, ETC
+\newenvironment{psalmtext}{\leftskip 0.25in}{\vspace{2 mm}}
+\newenvironment{rubric}{\color{benred8} \itshape \leftskip 0in \setlength{\parindent}{0.25in}}{\vspace{2 mm}}
+\newenvironment{response}{\leftskip 0in \setlength{\parindent}{0in}}{\vspace{2 mm}}
+
+% REDUCES SUBSECTION SPACE
+\def\subspace{\vspace{-13 mm}}
+
+% MAKES Flexa : TEXT
+\def\flex{\textit{\textcolor{benred8}{Flexa :}}}
+
+% MAKES Cantor : TEXT
+\def\cantor{\textit{\textcolor{benred8}{Cantor :}}}
+
+% MAKES vel : TEXT
+\def\vel{\textit{\textcolor{benred8}{vel :}}}
+
+% MAKES deinde : TEXT
+\def\deinde{\textit{\textcolor{benred8}{deinde :}}}
+
+% MAKES Repetitur : TEXT
+\def\repetitur{\textit{\textcolor{benred8}{Repetitur :}}}
+
+% MAKES secreto usque ad TEXT
+\def\secreto{\textit{\textcolor{benred8}{secreto usque ad}}}
+
+% MAKES T.P. TEXT
+\def\TemporePaschale{\textit{\textcolor{benred8}{T. P.}}}
+
+% MAKES ALL \GreStars RED
+\let\OldGreStar\GreStar
+\renewcommand{\GreStar}{\textcolor{benred8}{\OldGreStar}}
+
+% MAKES ALL \GreDaggers RED
+\let\OldGreDagger\GreDagger
+\renewcommand{\GreDagger}{\textcolor{benred8}{\OldGreDagger}}
+
+% MAKES ALL \Vbars RED
+\let\oldVbar\Vbar
+\def\VVbar{\textcolor{benred8}{\oldVbar\oldVbar .}}
+\renewcommand{\Vbar}{\textcolor{benred8}{\oldVbar .}}
+
+% MAKES ALL \Rbars RED
+\let\oldRbar\Rbar
+\renewcommand{\Rbar}{\textcolor{benred8}{\oldRbar .}}
+
+% MAKES ALL \Abars RED
+\let\oldAbar\Abar
+\renewcommand{\Abar}{\textcolor{benred8}{\oldAbar .}}
+
+% MAKES ALL \grealtcrosses RED
+\let\oldgrealtcross\grealtcross
+\renewcommand{\grealtcross}{\textcolor{benred8}{\oldgrealtcross}}
+
+% ANOTHER CROSS GLYPH USED FOR THE SIGN OF THE CROSS WITH THUMB ON CHEST
+\newcommand{\grebencross}{\fontspec{gresym3.ttf}\textcolor{benred8}{T}}
+
+% SPACE BETWEEN Capitulum AND BIBLE VERSE
+\def\capitulumSpace{\hspace{20 mm}}
+
+% MAKES RED PIPE FOR ENGLISH CADENCES
+\def\pipe{\textcolor{benred8}{\textdoublepipe}}
+
+% ANNOTATION STYLE
+\grechangestyle{annotation}{\small\scshape\bfseries\color{benred8}}
+\grechangedim{annotationraise}{-3 mm}{scalable}
+
+% FORMAT SECTIONS - use titlesec package
+\titleformat{\section}{\centering\scshape\Huge\color{benred8}}{}{1em}{}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+
+% FORMAT SUBSECTIONS - use titlesec package
+\titleformat{\subsection}{\centering\normalfont\color{benred8}}{}{1em}{}
+\titlespacing*{\subsection}{0pt}{0pt}{0.25pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HERE BEGINS THE DOCUMENT %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\thispagestyle{plain}
+
+\section*{Eastertide Lauds of the B.V.M.}
+
+{\centering
+Hail Mary.
+
+}
+
+\gregorioscore[a]{english/DeusInAdjutorium.gtex}
+
+\vspace{1mm}
+
+\greannotation{1 {\upshape\Abar} VII}
+\gregorioscore[a]{english/lauds/Ant1-01-assumpta_est_maria.gtex}
+
+\vspace{-2mm}
+
+{\centering
+\textcolor{benred8}{Psalm 92.}
+
+}
+
+%{\gresetinitiallines{0}
+%\gregorioscore[a]{english/lauds/FL1.gtex}
+
+%}
+
+\begin{psalmtext}
+The Lord hath reigned, he is clothed with beauty: \GreStar\ the Lord is clothed with strength, and hath girded himself.
+
+For he hath established the world \GreStar\ which shall not be moved.
+
+Thy throne is prepared from of old: \GreStar\ thou art from everlasting.
+
+The floods have lifted up, O Lord: \GreStar\ the floods have lifted up their voice.
+
+The floods have lifted up their waves, \GreStar\ with the noise of many waters.
+
+Wonderful are the surges of the sea: \GreStar\ wonderful is the Lord on high.
+
+Thy testimonies are become exceedingly credible: \GreStar\ holiness becometh thy house, O Lord, unto length of days.
+
+Glory be to the Father, and to \pipe\ the Son, \GreStar\ and to the \pipe\ Holy Spirit.
+
+As it was in the beginning, is now, and ever \pipe\ shall be, \GreStar\ world without \pipe\ end. A\textbf{men}.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{english/lauds/Ant1-02-assumpta_est_maria.gtex}
+
+}
+
+\vspace{2mm}
+
+\greannotation{2 {\upshape\Abar} VIII}
+\gregorioscore[a]{english/lauds/Ant2-01-maria_virgo.gtex}
+
+{\centering
+\textcolor{benred8}{Psalm 99.}
+
+}
+
+%{\gresetinitiallines{0}
+%\gregorioscore[a]{english/vespers/FL2.gtex}
+
+%}
+
+\begin{psalmtext}
+Sing joyfully to God, all the earth: \GreStar\ serve ye the Lord with gladness.
+
+Come in before his presence \GreStar\ with exceeding great joy.
+
+Know ye that the Lord he is God: \GreStar\ he made us, and not we ourselves.
+
+We are his people and the sheep of his pasture. \GreStar\ Go ye into his gates with praise, into his courts with hymns: and give glory to him.
+
+Praise ye his name: for the Lord is sweet, his mercy endureth for ever, \GreStar\ and his truth to generation and generation.
+
+Glory be to the Father, and \pipe\ \textbf{to} the Son, \GreStar\ and to the Holy \pipe\ Spirit.
+
+As it was in the beginning, is now, and \pipe\ ever shall be, \GreStar\ world without end. \pipe\ Amen.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{english/lauds/Ant2-02-maria_virgo.gtex}
+
+}
+
+\vspace{2mm}
+
+\greannotation{3 {\upshape\Abar} IV}
+\gregorioscore[a]{english/lauds/Ant3-01-in_odorem.gtex}
+
+{\centering
+\textcolor{benred8}{Psalm 62.}
+
+}
+
+%{\gresetinitiallines{0}
+%\gregorioscore[a]{english/lauds/FL3.gtex}
+
+%}
+
+\begin{psalmtext}
+O God, my God, \GreStar\ to thee do I watch at break of day.
+
+For thee my soul hath thirsted; \GreStar\ for thee my flesh, O how many ways!
+
+In a desert land, and where there is no way, and no water: \GreStar\ so in the sanctuary have I come before thee, to see thy power and thy glory.
+
+For thy mercy is better than lives: \GreStar\ thee my lips shall praise.
+
+Thus will I bless thee all my life long: \GreStar\ and in thy name I will lift up my hands.
+
+Let my soul be filled as with marrow and fatness: \GreStar\ and my mouth shall praise thee with joyful lips.
+
+If I have remembered thee upon my bed, I will meditate on thee in the morning: \GreStar\ because thou hast been my helper.
+
+And I will rejoice under the covert of thy wings: my soul hath stuck close to thee: \GreStar\ thy right hand hath received me.
+
+But they have sought my soul in vain, they shall go into the lower parts of the earth: \GreStar\ they shall be delivered into the hands of the sword, they shall be the portions of foxes.
+
+But the king shall rejoice in God, all they shall be praised that swear by him: \GreStar\ because the mouth is stopped of them that speak wicked things.
+
+\end{psalmtext}
+
+{\centering
+\textcolor{benred8}{Psalm 66.}
+
+}
+
+\begin{psalmtext}
+May God have mercy on us, and bless us: \GreStar\ may he cause the light of his countenance to shine upon us, and may he have mercy on us.
+
+That we may know thy way upon earth: \GreStar\ thy salvation in all nations.
+
+Let people confess to thee, O God: \GreStar\ let all people give praise to thee. 
+
+Let the nations be glad and rejoice: \GreStar\ for thou judgest the people with justice, and directest the nations upon earth. 
+
+Let the people, O God, confess to thee: \GreStar\ let all the people give praise to thee: the earth hath yielded her fruit.
+
+May God, our God bless us, may God bless us: \GreStar\ and all the ends of the earth fear him.
+
+Glory be to the \pipe\ Fa\uline{ther, and} to the Son, \GreStar\ and to the Ho- \pipe\ ly Spirit.
+
+As it was in the beginning, is \pipe\ now, and ever \uline{shall be}, \GreStar\ world without \pipe\ end. Amen.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{english/lauds/Ant3-02-in_odorem.gtex}
+
+}
+
+\vspace{2mm}
+
+\greannotation{4 {\upshape\Abar} VII}
+\gregorioscore[a]{english/lauds/Ant4-01-benedicta_filia.gtex}
+
+{\centering
+\textcolor{benred8}{The Song of the Three Children.\capitulumSpace \emph{Dan. 3.}}
+
+}
+
+%{\gresetinitiallines{0}
+%\gregorioscore[a]{english/vespers/FL4.gtex}
+
+%}
+
+\begin{psalmtext}
+All ye works of the Lord, bless the Lord: \GreStar\ praise and exalt him above all for ever.
+
+O ye angels of the Lord, bless the Lord: \GreStar\ O ye heavens, bless the Lord:
+
+O all ye waters that are above the heavens, bless the Lord: \GreStar\ O all ye powers of the Lord, bless the Lord.
+
+O ye sun and moon, bless the Lord: \GreStar\ O ye stars of heaven, bless the Lord.
+
+O every shower and dew, bless ye the Lord: \GreStar\ O all ye spirits of God, bless the Lord.
+
+O ye fire and heat, bless the Lord: \GreStar\ O ye cold and heat, bless the Lord.
+
+O ye dews and hoar frosts, bless the Lord: \GreStar\ O ye frost and cold, bless the Lord.
+
+O ye ice and snow, bless the Lord: \GreStar\ O ye nights and days, bless the Lord.
+
+O ye light and darkness, bless the Lord: \GreStar\ O ye lightnings and clouds, bless the Lord.
+
+O let the earth bless the Lord: \GreStar\ let it praise and exalt him above all for ever.
+
+O ye mountains and hills, bless the Lord: \GreStar\ O all ye things that spring up in the earth, bless the Lord.
+
+O ye fountains, bless the Lord: \GreStar\ O ye seas and rivers, bless the Lord.
+
+O ye whales, and all that move in the waters, bless the Lord: \GreStar\ O all ye fowls of the air, bless the Lord.
+
+O all ye beasts and cattle, bless the Lord: \GreStar\ O ye sons of men, bless the Lord.
+
+O let Israel bless the Lord: \GreStar\ let them praise and exalt him above all for ever.
+
+O ye priests of the Lord, bless the Lord: \GreStar\ O ye servants of the Lord, bless the Lord.
+
+O ye spirits and souls of the just, bless the Lord: \GreStar\ O ye holy and humble of heart, bless the Lord.
+
+O Ananias, Azarias, and Misael, bless ye the Lord: \GreStar\ praise and exalt him above all for ever.
+
+\textcolor{benred8}{\emph{A sign of reverence is made:}} Let us bless the Father and the Son, with the Holy Ghost; \GreStar\ let us praise and exalt him above all for ever.
+
+Blessed art thou, O Lord, in the firmament of heaven: \GreStar\ and worthy of praise, and glorious for ever.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{english/lauds/Ant4-02-benedicta_filia.gtex}
+
+}
+
+\vspace{2mm}
+
+\greannotation{5 {\upshape\Abar} I}
+\gregorioscore[a]{latin/lauds/an--pulchra_es_et_decora--solesmes.gtex}
+
+{\centering
+\textcolor{benred8}{Psalm 148.}
+
+}
+
+%{\gresetinitiallines{0}
+%\gregorioscore[a]{english/vespers/FL5.gtex}
+
+%}
+
+\begin{psalmtext}
+Praise ye the Lord from the heavens * praise ye him in the high places.
+
+Praise ye him, all his angels: * praise ye him, all his hosts.
+
+Praise ye him, O sun and moon: * praise him, all ye stars and light.
+
+Praise him, ye heavens of heavens: * and let all the waters that are above the heavens, praise the name of the Lord. 
+
+For he spoke, and they were made: * he commanded, and they were created.
+
+He hath established them for ever, and for ages of ages: * he hath made a decree, and it shall not pass away.
+
+Praise the Lord from the earth, * ye dragons, and all ye deeps:
+
+Fire, hail, snow, ice, stormy winds * which fulfill his word:
+
+Mountains and all hills, * fruitful trees and all cedars:
+
+Beasts and all cattle: * serpents and feathered fowls: 
+
+Kings of the earth and all people: * princes and all judges of the earth:
+
+Young men and maidens: * let the old with the younger, praise the name of the Lord: For his name alone is exalted.
+
+The praise of him is above heaven and earth: * and he hath exalted the horn of his people.
+
+A hymn to all his saints: to the children of Israel, a people approaching him. 
+
+\end{psalmtext}
+
+{\centering
+\textcolor{benred8}{Psalm 149.}
+
+}
+
+\begin{psalmtext}
+Sing ye to the Lord a new canticle: * let his praise be in the church of the saints.
+
+Let Israel rejoice in him that made him: * and let the children of Sion be joyful in their king.
+
+Let them praise his name in choir: * let them sing to him with the timbrel and the psaltery.
+
+For the Lord is well pleased with his people: * and he will exalt the meek unto salvation.
+
+The saints shall rejoice in glory: * they shall be joyful in their beds.
+
+The high praises of God shall be in their mouth: * and two-edged swords in their hands:
+
+To execute vengeance upon the nations, * chastisements among the people:
+
+To bind their kings with fetters, * and their nobles with manacles of iron.
+
+To execute upon them the judgment that is written: * this glory is to all his saints.
+
+\end{psalmtext}
+
+{\centering
+\textcolor{benred8}{Psalm 150.}
+
+}
+
+\begin{psalmtext}
+Praise ye the Lord in his holy places: * praise ye him in the firmament of his power.
+
+Praise ye him for his mighty acts: * praise ye him according to the multitude of his greatness.
+
+Praise him with sound of trumpet: * praise him with psaltery and harp.
+
+Praise him with timbrel and choir: * praise him with strings and organs.
+
+Praise him on high sounding cymbals: praise him on cymbals of joy: * let every spirit praise the Lord.
+
+Glory be to the Father, and \pipe\ \textbf{to} the Son, \GreStar\ and to the Holy \pipe\ Spirit.
+
+As it was in the beginning, is now, and \pipe\ ever shall be, \GreStar\ world without end. \pipe\ Amen.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{latin/lauds/an--pulchra_es_et_decora--solesmes.gtex}
+
+}
+
+\subsection*{Chapter.\capitulumSpace \emph{Song 6:8.}}
+
+\gregorioscore[a]{english/lauds/CapitulumVideruntEam.gtex}
+
+\subsection*{Hymn.}
+
+\greannotation{II}
+\gregorioscore[a]{latin/lauds/hy--o_gloriosa_virginum--solesmes.gtex}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{latin/lauds/BenedictaTu.gtex}
+
+}
+
+\newlength{\versiclespace}
+\setlength{\versiclespace}{0.5mm}
+
+\begin{response}
+\hspace{2.5 mm}\Rbar\ \hspace{1.1 mm} Et \hspace{\versiclespace} bened\'{i}ctus \hspace{\versiclespace} fructus \hspace{\versiclespace} ventris \hspace{\versiclespace} tui.
+
+\end{response}
+
+\vspace{2mm}
+
+\subsection*{Canticle of Zacharias.\capitulumSpace \emph{Luke 1, 68--79.}}
+
+\greannotation{{\upshape\Abar} VI}
+\gregorioscore[a]{english/lauds/BenFL.gtex}
+
+\begin{psalmtext}
+% Blessed be the Lord + God of Israel; \GreStar\ because he hath visited and wrought the redemption of his people:
+
+And hath raised up an horn of salvation to us, \GreStar\ in the house of David his servant:
+
+As he spoke by the mouth of his holy Prophets, \GreStar\ who are from the beginning:
+
+Salvation from our enemies, \GreStar\ and from the hand of all that hate us:
+
+To perform mercy to our fathers, \GreStar\ and to remember his holy testament,
+
+The oath, which he swore to Abraham our father, \GreStar\ that he would grant to us,
+
+That being delivered from the hand of our enemies, \GreStar\ we may serve him without fear,
+
+In holiness and justice before him, \GreStar\ all our days.
+
+And thou, child, shalt be called the prophet of the Highest: \GreStar\ for thou shalt go before the face of the Lord to prepare his ways:
+
+To give knowledge of salvation to his people, \GreStar\ unto the remission of their sins:
+
+Through the bowels of the mercy of our God, \GreStar\ in which the Orient from on high hath visited us:
+
+To enlighten them that sit in darkness, and in the shadow of death: \GreStar\ to direct our feet into the way of peace.
+
+Glory be to the Father, and \pipe\ to the Son, \GreStar\ and to the \pipe\ Holy Spirit.
+
+As it was in the beginning, is now, and e- \pipe\ ver shall be, \GreStar\ world with- \pipe\ out end. Amen.
+
+\end{psalmtext}
+
+{\gresetinitiallines{0}
+\gregorioscore[a]{latin/vespers/MagAnt-02.gtex}
+
+}
+
+\vspace{2mm}
+
+\subsection*{Prayers.}
+
+\gregorioscore[a]{latin/Kyrie.gtex}
+
+\vspace{5mm}
+
+\gregorioscore[a]{english/DomineExaudi-short-01.gtex}
+
+\vspace{2mm}
+
+\subsection*{\textcolor{black}{Let us pray.}\capitulumSpace \emph{Oration.}}
+
+\begin{response}\lettrine{G}{r}ant to us, thy servants, O Lord, to be glad in unbroken health of mind and body;~\GreDagger\ and by the glorious intercession of the blessed Virgin Mary to be freed from our present sadness~\GreStar\ and to rejoice with everlasting gladness. Through our Lord Jesus Christ, thy Son, who liveth and reigneth with thee, in the unity of the Holy Spirit, God, for ever and ever. \Rbar ~Amen.
+
+\end{response}
+
+\vspace{2mm}
+
+\gregorioscore[a]{english/DomineExaudi-short-01.gtex}
+
+\vspace{2mm}
+
+\gregorioscore[a]{english/BenedicamusDomino.gtex}
+
+\vspace{2mm}
+
+\gregorioscore[a]{english/FideliumAnimae.gtex}
+
+\vspace{2mm}
+
+{\centering
+Our Father.
+
+}
+
+\end{document}
